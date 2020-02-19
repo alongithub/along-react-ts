@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "jsx": "react",
+        "target": "es5",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "types": [
+            // "reflect-metadata",
+            // "jest",
+            "node"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "baseUrl": "./src",
+        "outDir": "./build",
+        "paths": {
+            // "@components/*": [
+            //     "client/components/*"
+            // ],
+            // "@utils/*": [
+            //     "client/utils/*"
+            // ],
+            // "@assets/*": [
+            //     "client/assets"
+            // ],
+            // "@models/*": [
+            //     "client/models/*"
+            // ],
+            // "@pages/*": [
+            //     "client/pages/*"
+            // ],
+            // "@stores/*": [
+            //     "client/stores"
+            // ]
+        }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

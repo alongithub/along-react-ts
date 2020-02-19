@@ -1,0 +1,40 @@
+.numlist_wrapper{
+    height: 100%;
+    overflow: hidden;
+    .numlist_item{
+        position: relative;
+        float: left;
+        text-align: center;
+        height: 100%;
+        padding-top: 3vh;
+        box-sizing: border-box;
+        .numlist_number{
+            color: #000;
+            font-size: 22px;
+            line-height: 5vh;
+            font-weight: bolder;
+            margin-bottom: 0;
+        }
+        .numlist_valuename{
+            color: #999;
+            font-size: 14px;
+        }
+        &:not(last-child){
+            .numlist_line{
+                position: absolute;
+                right: -1px;
+                width: 2px;
+                top: 0px;
+                height: 100%;
+                box-sizing: border-box;
+                padding: 3vh 0;
+                .numlist_line_itme{
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    background: #f0f0f0;
+                }
+            }
+        }
+    }
+}

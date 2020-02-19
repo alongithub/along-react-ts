@@ -1,0 +1,99 @@
+.treelist_wrapper{
+    //展开合并图标位置
+    .nochildrentip{
+        line-height: 25px;
+        font-size: 12px;
+        text-align: center;
+        color: #999;
+    }
+    .ant-menu-submenu-vertical > .ant-menu-submenu-title .ant-menu-submenu-arrow, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title .ant-menu-submenu-arrow, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title .ant-menu-submenu-arrow, .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow{
+        left: 5px;
+    }
+    //展开前图片
+    .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+        transform: rotate(45deg) translateX(2px) translateY(-4px);
+    }
+    .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+        transform: rotate(-45deg) translateX(2px) translateY(4px);
+    }
+    /*展开后*/
+    .ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+        transform: rotate(-45deg) translateX(2px) translateY(4px);
+    }
+    .ant-menu-submenu-open.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after{
+        transform: rotate(45deg) translateX(2px) translateY(0px);
+    }
+    // 内层缩进
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item, .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title{
+        padding-left: 35px !important;
+    }
+    // 最外层缩进
+    .ant-menu-dark.ant-menu-inline .ant-menu-item, .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title{
+        padding-left: 35px !important;
+
+    }
+    // 展开的项变蓝色背景
+    .ant-menu-submenu-open .ant-menu-submenu-title[aria-expanded="true"]{
+        background: #3EA8FF;
+        color:#fff;
+    }
+    .ant-menu-submenu-open .ant-menu-submenu-title{
+        background: #EAEAEA;
+    }
+
+    //菜单间距
+    .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item, .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title, .ant-menu-inline .ant-menu-submenu-title{
+        margin-bottom: 0px;
+        margin-top: 1px;
+    }
+    //最内层样式
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item, .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title{
+        font-size: 12px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+        background: none;
+    }
+    .ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after{
+        display: inline-block;
+        border:none;
+        left:16px;
+        top:13px;
+        right: auto;
+        width: 8px;
+        height: 8px;
+        background: #1890ff;
+    }
+    .ant-menu-inline .ant-menu-item{
+        padding-left: 35px !important;
+    }
+    .ant-menu-submenu .ant-menu-inline .ant-menu-item{
+        padding-left: 35px !important;
+    }
+    .ant-menu-inline .ant-menu-item::after{
+        display: inline-block;
+        border:none;
+        left:16px;
+        top:15px;
+        right: auto;
+        width: 8px;
+        height: 8px;
+        background: #1890ff;
+    }
+    .ant-menu-submenu .ant-menu-inline .ant-menu-item::after{
+        display: inline-block;
+        border:none;
+        left:16px;
+        top:13px;
+        right: auto;
+        width: 8px;
+        height: 8px;
+        background: #1890ff;
+    }
+
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left{
+        border:none;
+        background: #fff;
+    }
+}

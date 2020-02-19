@@ -1,0 +1,116 @@
+@LOGOHEIGHT: 8vh;
+.sider_wrapper{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: @LOGOHEIGHT;
+}
+.menu_logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @LOGOHEIGHT;
+    line-height: @LOGOHEIGHT;
+    box-sizing: border-box;
+    padding: 0 16px;
+    white-space:nowrap;
+    background: #002140;
+    /*text-overflow: clip*/
+}
+
+.sider_wrapper .FreeScrollbar-vertical-track{
+    border-left: none !important;
+    background: none !important;
+    width: 3px !important;
+    .FreeScrollbar-vertical-handler{
+        // background-color: transparent !important;
+    }
+}
+.menu_scrollWrapper{
+    height: 100%;
+}
+.menu_logo .corner_img{
+    height: 20px;
+}
+.ant-layout-sider-collapsed .menu_logo{
+    padding: 0 14px;
+}
+.menu_logo>img{
+    margin-right: 10px;
+    height: 20px;
+}
+.menu_logo>span{
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.ant-layout-sider-collapsed .menu_logo>span{
+    opacity: 0;
+}
+.menu_logo>img,.menu_logo>span{
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.userOperate , .userOperate>li{
+    float: right;
+    height: 100%;
+}
+.userOperate{
+    padding-right: 20px;
+}
+.userOperate>li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.userOperate span , .userOperate img{
+    line-height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-size: 12px;
+    color: #999999;
+    cursor: pointer;
+}
+.ant-layout-header{
+    height: 50px;
+    line-height: 50px;
+}
+.ant-layout-content{
+    height: calc(100% - 86px);
+}
+.ant-layout-footer{
+    padding: 10px 50px!important;
+}
+.ant-layout-sider-trigger{
+    height: 40px;
+    line-height: 40px;
+}
+.ant-menu-submenu-title img{
+    margin-right: 10px;
+}
+.ant-layout-sider-collapsed .ant-menu-submenu-title .titleSpan{
+    opacity: 0;
+}
+.ant-layout-sider{
+    height: 100vh;
+}
+.ant-menu-item .icon{
+    margin-right: 10px;
+}
+.ant-menu.ant-menu-dark.ant-menu-inline-collapsed.ant-menu-root.ant-menu-vertical .titleSpan{
+    opacity: 0;
+}
+
+.ant-menu-submenu-arrow{
+    right: 26px !important;
+}
+
+// 解决 导航栏缩放或者使用360极速模式显示留白问题
+.FreeScrollbar-container{
+    overflow: auto !important;
+    right: -22px !important;
+}
