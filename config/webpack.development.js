@@ -13,12 +13,6 @@ module.exports = {
             warning: true,
             errors: true,
         },
-        proxy: {
-            '/api': {
-                target: 'http://223.72.155.17:8028',
-                pathRewrite: {'^/api' : ''}
-            }
-        }
     },
     module: {
         rules: [

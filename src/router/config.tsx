@@ -8,12 +8,12 @@ import count from './Menu/image/count.png';
 export const routerlist = [
     '/login', // 也可写成 {url: '/login'}
     '/layout',
-    {
-        url: '/authentication',
-        children: [
-            '/authentication/ression',
-        ]
-    },
+    // {
+    //     url: '/authentication',
+    //     children: [
+    //         '/authentication/ression',
+    //     ]
+    // },
     {
         // 导航菜单 Menu
         url: '/along', 
