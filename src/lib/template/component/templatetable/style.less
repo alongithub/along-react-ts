@@ -21,9 +21,10 @@ body #root{
 
 .template_wrapper{
     // 弹出详情的列
-    .template-detail-btn{
+    .template-detail-btn, .template-btn{
         color: #328eeb;
         cursor: pointer;
+        margin: 0 4px;
     }
     
     .ant-table-thead > tr {
@@ -41,11 +42,16 @@ body #root{
     .ant-table-thead{
         th{
             padding: 12px 10px !important;
+            white-space: nowrap;
         }
     }
     .ant-table-row{
         height: 5.5vh;
         td {
+            white-space: nowrap;
+            max-width: 7vw;
+            overflow: hidden;
+            text-overflow: ellipsis;
             padding: 10px 10px !important;
             font-size: 14px;
             font-weight: 400;

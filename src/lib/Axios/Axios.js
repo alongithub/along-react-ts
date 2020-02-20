@@ -2,8 +2,9 @@ import axios from 'axios'
 import qs from 'qs'
 import {Message} from 'antd';
 // import {getCookie} from '../tool/tool';
-
-const baseurl = 'http://172.16.41.31:8089';
+const _MODE = process.env.MODE;
+const _PJNAME = '/bjkw';  // 项目名
+const baseurl = (_MODE === 'development' ? '/api' : '') + _PJNAME;
 export default {
     get: function(url, data, error) {
         // 解决 ie浏览器，360兼容模式get请求缓存问题

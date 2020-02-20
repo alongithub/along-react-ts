@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Icon, Button, Modal} from 'antd';
+import {Table, Icon, Button, Modal, Tooltip} from 'antd';
 import {setFilter, setLoading, setList, setPagenumber, setPagesize} from '../../reducer/action';
 import './style.less';
 import './detailmodal.less';
@@ -80,6 +80,13 @@ class TemplateTable extends React.Component<Props, State> {
         const {config, ctx, store} = this.props;
         const {filter, list, loading, total, pagenumber, pagesize} = store;
         config.columns.forEach(item => {
+            if (typeof item.key !== 'undefined' && item.key === 'template-opera') {
+                // 当item中存在key并且值为template-opera, 说明该操作列需要注入store或者ctx的数据，比如删除后需要刷新的时候
+                const Operation = item.component;
+                item.render = (key, record) => {
+                    return <Operation record={record} ctx={ctx} store={store}/>
+                }
+            }
             if (typeof item.modal !== 'undefined') {
                 // 如果配置中的columns项存在modal项，表示该字段点击后需要弹出详情窗口
                 item.render = (value, record) => {
@@ -95,15 +102,18 @@ class TemplateTable extends React.Component<Props, State> {
                                 title: 'Detail',
                                 ...modalprops,
                                 content: <Detail
-                                    distory={() => {
+                                // 这里绑定modal.destory，不能直接绑定，必须声明一个新方法，不然modal还未声明完成
+                                destroy={() => {
                                         modal.destroy();
-                                    }}
-                                    record={record}
+                                }}
+                                record={record}
                                 />,
                             })
                         }}
                     >
-                        {value}
+                        <Tooltip title={value}>
+                            {value}
+                        </Tooltip>
                     </span>
                 }
             }
@@ -140,6 +150,14 @@ class TemplateTable extends React.Component<Props, State> {
                     ? <Icon type="filter" style={{color: '#328eeb'}}/>
                     : <Icon type="filter" style={{color: '#999'}}/>; 
             }
+            if (typeof item.render === 'undefined') {
+                // 自动添加 tip
+                item.render = (value) => {
+                    return <Tooltip title={value}>
+                        {value}
+                    </Tooltip>
+                }
+            } 
         })
         return  <Table
             pagination={{

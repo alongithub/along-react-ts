@@ -55,8 +55,8 @@ class Wrapper extends React.Component {
             ...filter,
             ...search,
             ...sort,
-            pagesize,
-            pagenumber,
+            pageSize: pagesize,
+            pageNumber: pagenumber,
             ...session === undefined ? {} : {session},
             ...otherparams,
         }

@@ -9,6 +9,12 @@ export const routerlist = [
     '/login', // 也可写成 {url: '/login'}
     '/layout',
     {
+        url: '/authentication',
+        children: [
+            '/authentication/ression',
+        ]
+    },
+    {
         // 导航菜单 Menu
         url: '/along', 
         children: [
@@ -107,6 +113,15 @@ export const routerconfig = {
         path: '../page/map/map',
         component: Loadable({
             loader: () => import('../page/map/map'),
+            loading: MyLoadingComponent,
+            delay: 300,
+        })
+    },
+    '/authentication/ression': {
+        icon: detail,
+        title: '任务管理',
+        component: Loadable({
+            loader: () => import('../page/authentication/ression'),
             loading: MyLoadingComponent,
             delay: 300,
         })
